@@ -7,15 +7,6 @@ body, h1, h2, li, ul, a {
     color: #000;
 }
 
-#container {
-    max-width: 800px;
-    min-width: 199px;
-    width: 100%;
-    margin: 0 auto;
-    font-family: arial;
-}
-
-
 /* define grid area names ------------------*/
 .header     {grid-area: head;}
 .nav        {grid-area: navi;}
@@ -33,16 +24,21 @@ body, h1, h2, li, ul, a {
 .footer             { background-image: linear-gradient(#fff,#cfc);}
 ------------------------------------------*/
 
+
 #container {
+    max-width: 800px;
+    min-width: 199px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: arial;
     box-shadow: 0rem 0rem 4rem #ddd;
 }
+
 
 .header {
     padding: 1rem 1rem 0 1rem;
     display: flex;
-    //flex-direction: row;
     align-items: top;
-   // justify-content: right;
 }
 
 .logo {
