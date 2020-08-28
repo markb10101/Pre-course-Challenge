@@ -51,8 +51,7 @@ body, h1, h2, li, ul, a {
 }
 
 .logo:hover {
-    //fill: #fc0;
-    background-image: linear-gradient(#fco, #fff);
+    fill: #fc0;
     stroke: #fff;
 }
 
@@ -60,7 +59,8 @@ h1 {
     position: relative;
     display: inline-block;
     margin: 0.5rem 0 0 0;
-    font-size: 2rem;
+    font-size: 1.75rem;
+    font-weight: normal;
 }
 
 .topnav {
