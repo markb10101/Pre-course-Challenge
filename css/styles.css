@@ -32,6 +32,8 @@ body, h1, h2, li, ul, a {
     margin: 0 auto;
     font-family: arial;
     box-shadow: 0rem 0rem 4rem #ddd;
+    background-image: linear-gradient(#fc9, #fff);
+
 }
 
 
@@ -44,8 +46,8 @@ body, h1, h2, li, ul, a {
 .logo {
     margin: 0;
     padding: 0;
-    fill: #eee;
-    stroke: #fff;
+    fill: #da7;
+    stroke: #da7;
     stroke-width: 0.125rem;
     transform: scale(0.8,0.8);
 }
@@ -92,7 +94,7 @@ p a:hover, li a:hover {
 }
 
 .thumbnails li img{
-    box-shadow: 0.1rem 0.1rem 0.4rem #666;
+    box-shadow: 0.1rem 0.1rem 0.4rem rgba(0,0,0,0.75);
 }
 
 .thumbnails li img:hover{
@@ -119,7 +121,7 @@ p {
         display: grid;
         grid-template-columns: 1fr 2fr 2fr 2fr;
         grid-template-rows: repeat(5,auto);
-        grid-gap: .25rem;
+        grid-gap: 0;
         grid-template-areas: 
         "head head head head"
         "navi navi navi navi"
@@ -149,6 +151,10 @@ p {
     .topnav li {
         position: relative;
         right: 4rem;
+    }
+
+    .info, .main {
+        background-color: #fff;
     }
 
 
