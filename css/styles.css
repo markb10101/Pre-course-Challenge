@@ -4,7 +4,7 @@
 body, h1, h2, li, ul, a {
     padding: 0;
     margin: 0;
-    color: #000;
+    color: #4b4853;
 }
 
 /* define grid area names ------------------*/
@@ -46,14 +46,14 @@ body, h1, h2, li, ul, a {
 .logo {
     margin: 0;
     padding: 0;
-    fill: #da7;
-    stroke: #da7;
+    fill: #4b4853;
+    stroke: #4b4853;
     stroke-width: 0.125rem;
     transform: scale(0.8,0.8);
 }
 
 .logo:hover {
-    fill: #fc0;
+    fill: #e17f18;
     stroke: #fff;
 }
 
@@ -68,7 +68,7 @@ h1 {
 .topnav {
     padding: 0 4rem;
     margin: 0 1em;
-    background-color: #fc0;
+    background-color: #e17f18;
 }
 
 .topnav li{
@@ -87,7 +87,7 @@ li a.current {
 
 p a:hover, li a:hover {
     color: #fff;
-    background-color: #fc0;
+    background-color: #e17f18;
 }
 
 .profile img.wide {
