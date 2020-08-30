@@ -46,23 +46,25 @@ body, h1, h2, li, ul, a {
 .logo {
     margin: 0;
     padding: 0;
-    fill: #4b4853;
-    stroke: #4b4853;
-    stroke-width: 0.125rem;
+    fill: rgba(0,0,0,0.05);
+    transition-property: fill;
+    transition-duration: .5s;
     transform: scale(0.8,0.8);
 }
 
 .logo:hover {
     fill: #e17f18;
     stroke: #fff;
+    stroke-width: 0.25rem;
 }
 
 h1 {
     position: relative;
     display: inline-block;
     margin: 0.5rem 0 0 0;
+    font-family: arial;
     font-size: 1.75rem;
-    font-weight: normal;
+    font-weight: 100;
 }
 
 .topnav {
