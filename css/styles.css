@@ -5,6 +5,13 @@ body, h1, h2, li, ul, a {
     padding: 0;
     margin: 0;
     color: #4b4853;
+    font-family: 'Abel', 'sans serif';
+    box-sizing: border-box;
+}
+
+p {
+    padding: 0 1rem 0 1rem;
+    font-family: 'Abel', 'sans serif';
 }
 
 ::selection {
@@ -24,10 +31,9 @@ body, h1, h2, li, ul, a {
 #container {
     max-width: 800px;
     min-width: 199px;
-    width: 100%;
+    min-height: 100vh;
     height: 100%;
     margin: 0 auto;
-    font-family: arial;
     box-shadow: 0rem 0rem 4rem #ddd;
     background-image: linear-gradient(#fc9, #fff, #fff);
 
@@ -58,9 +64,8 @@ h1 {
     position: relative;
     display: inline-block;
     margin: 0.5rem 0 0 0;
-    font-family: arial;
-    font-size: 1.75rem;
-    font-weight: 100;
+    font-size: 2rem;
+    font-weight: 200;
 }
 
 .topnav {
@@ -72,6 +77,10 @@ h1 {
 .topnav li{
     display: inline;
     padding: 0 1rem;
+}
+
+.topnav li a{
+    text-transform: uppercase;
 }
 
 a {
@@ -122,13 +131,16 @@ p a:hover, li a:hover {
     left: -0.2rem;
 }
 
-p {
-    padding: 0 1rem 0 1rem;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dotted #4b4853;
+    margin: 0;
 }
 
-.clock {
-    font-family: 'Courier New';
-    //font-size: 1rem;
+.footer p {
+    margin: 0 0.25rem;
 }
 
 /* end of general rules --------------------*/
@@ -222,13 +234,6 @@ p {
 
     .profile img.thum {
         display: none;
-    }
-
-    .footer {
-        display: flex;
-    }
-    .footer p {
-        margin: 2rem auto;
     }
 
 }
