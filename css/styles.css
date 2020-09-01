@@ -135,7 +135,7 @@ p a:hover, li a:hover {
 .footer {
     display: flex;
     justify-content: space-between;
-    border-top: 1px dotted #4b4853;
+    border-top: 1px solid rgba(0,0,0,0.1);
     margin: 0;
 }
 
