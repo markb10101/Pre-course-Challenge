@@ -24,13 +24,11 @@ p {
 .nav        {grid-area: navi;}
 .contact    {grid-area: cont;}
 .main       {grid-area: main;}
-.info       {grid-area: info;}
 .aside      {grid-area: asid;}
 .footer     {grid-area: foot;}
 
 #container {
     max-width: 800px;
-    min-width: 199px;
     min-height: 100vh;
     height: 100%;
     margin: 0 auto;
@@ -38,7 +36,6 @@ p {
     background-image: linear-gradient(#fc9, #fff, #fff);
 
 }
-
 
 .header {
     display: flex;
@@ -69,19 +66,22 @@ h1 {
 }
 
 .topnav {
-    padding: 0 4rem;
     margin: 0 1em;
     background-color: #e17f18;
+    display: flex;
+    justify-content: space-between; 
+
 }
 
 .topnav li{
     display: inline;
-    padding: 0 1rem;
+    padding: 0rem 1rem 0 1rem;
 }
 
 .topnav li a{
     text-transform: uppercase;
 }
+
 
 a {
     text-decoration: none;
@@ -95,42 +95,81 @@ li a.current {
 p a:hover, li a:hover {
     color: #fff;
     background-color: #e17f18;
+    text-decoration: none;
 }
 
-.profile img.wide {
-    width: 28rem;
-    height: 8rem;
-    margin: 1rem 1rem 0 1rem;
+p a {
+    text-decoration: underline;
 }
 
-.profile img.thum {
-    width: 8rem;    
-    height: 8rem;
-    margin: 1rem 1rem 0 1rem;
+.main {
+    min-height: 80vh;
 }
 
+.profile {
+    margin: 1rem 1rem;
+    height: 128px;
+    background-color: #fc9;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: space-between; 
+}
 
 .thumbnails li img{
-    width: 8rem;
-    height: 8rem;
+    width: 128px;
+    height: 128px;
     margin: 1rem 1rem 0 1rem;
-
+    box-sizing: border-box;
 }
 
-.thumbnails li img.faded{
-    filter: grayscale(100%);
+.thumbnails li {
+    display: inline;
+}
+
+.overlay {
+    position: relative;
+    top: -80px;
+    left: 80px;
+    right: 0;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    //transition: 0.3s;
+}
+
+.thumbnails li:hover img{
     opacity: 0.25;
 }
 
-.thumbnails li img:hover{
-    box-shadow: 0.1rem 0.1rem 0.4rem rgba(0,0,0,0.75);
-    filter: none;
+.thumbnails li:hover .overlay{
     opacity: 1;
-    position: relative;
-    top: -0.2rem;
-    left: -0.2rem;
 }
 
+.overlay .text {
+    color: #4b4853;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.overlay .text .num {
+    margin-top: 0.25rem;
+    background-color: #4b4853;
+    color: #fff;
+    border-radius: 0.25rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
 
 .footer {
     display: flex;
@@ -149,18 +188,17 @@ p a:hover, li a:hover {
 
 
 /* mobile specific rules -------------------*/
-@media screen and (max-width: 720px){
+@media screen and (max-width: 719px){
     #container{        
 
         display: grid;
         grid-template-columns: 1fr 2fr 2fr 2fr;
         grid-template-rows: repeat(5,auto);
-        grid-gap: 0;
         grid-template-areas: 
         "head head head head"
         "navi navi navi navi"
         "cont cont cont cont"
-        "main info info info"
+        "main main main main"
         "foot foot foot foot"
         ;
     }
@@ -179,24 +217,20 @@ p a:hover, li a:hover {
     }
 
     .topnav {
+        justify-content: flex-start;
         margin: 0;
     }
 
-    .topnav li {
-        position: relative;
-        right: 4rem;
+    .thumbnails {
+        justify-content: flex-start; 
     }
 
-    .profile img.wide{
-        display: none;
-    }
-
-    .info, .main {
+    .main {
         background-color: #fff;
-    }
-
-
+    } 
 }
+/* end of mobile specific rules ------------*/
+
 
 /* desktop specific rules ------------------*/
 @media screen and (min-width: 720px){
@@ -209,36 +243,15 @@ p a:hover, li a:hover {
         "head head head"
         "cont navi asid"
         "cont main asid"
-        "cont info asid"
+        "cont main asid"
         "foot foot foot"
         ;
     }
 
-    .topnav {
-        padding: 0;
-        display: flex;
-        justify-content: space-between; 
-    }
-
-    .topnav li{
-        padding: 0rem 1rem 0 1rem;
-    }
-
-    .thumbnails {
-        display: flex;
-        justify-content: space-between; 
-    }
-    .thumbnails li {
-        display: inline;
-    }
-
-    .profile img.thum {
-        display: none;
-    }
 
 }
 
-
+/* end of desktop specific rules -----------*/
 
 
 
