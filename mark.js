@@ -44,7 +44,7 @@ setInterval(tickTock, 1000)
 /////////////////////////////
 // Display a random MarkFax
 
-// Store a pointer to the 2nd paragraph of the .aside element in a variable
+// Store the 2nd paragraph of the .aside element in a variable
 var asidePar = document.querySelector('.aside > p:nth-child(2)');
 
 // Populate an array with some random facts
@@ -90,11 +90,12 @@ aside.addEventListener('click',() =>{
 
 //////////////////////////////////////////////////////////////////
 // Add a Click eventListener to all of the project thumbnails
+// and display relevant info in the section below the thumbnails
 
 // Create Nodelist of all the li tags within the ul.thumbnail element
 const thumbnails = document.querySelectorAll('ul.thumbnails li');
 
-
+// Loop through the Nodelist and add a Click EventListener
 thumbnails.forEach(function(thumbnail,current) {
     thumbnail.addEventListener('click', () => {
         
@@ -105,7 +106,7 @@ thumbnails.forEach(function(thumbnail,current) {
         for(var i=0; i < visibles.length; i++){
             visibles[i].classList.replace("visible","hidden");
         }
-        
+              
         // Make the relevant info block visible
         var clickedId = "info_" + (current + 1);
         var clickedElement = document.getElementById(clickedId);
