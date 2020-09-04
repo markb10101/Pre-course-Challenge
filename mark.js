@@ -57,7 +57,7 @@ var factsList = [
     "Mark's favourite coffee is an 'Oatmilk Flat White with an Extra Shot of Espresso'.",
     "Mark once crossed a busy road to avoid acknowledging members of 70's pop combo 'Genesis'.",
     "Mark produced radio jingles for legendary techno-pioneers '808 State'.",
-    "Mark's favourite animal is the Whippet.",
+    "Mark's favourite dog breed is the Whippet.",
     "Mark's favourite vegetable is Brocolli.",
     "Mark used to be terrified of Moths but now experiences only moderate anxiety unless the moth is particularly large.",
     "Mark enjoys the heady scent of a hot greenhouse full of tomato plants.",
@@ -99,12 +99,22 @@ const thumbnails = document.querySelectorAll('ul.thumbnails li');
 thumbnails.forEach(function(thumbnail,current) {
     thumbnail.addEventListener('click', () => {
         
-        // When the thumbnail li is clicked...
-
         // Hide all elements with a visible class
         var visibles = document.getElementsByClassName("visible");
         for(var i=0; i < visibles.length; i++){
             visibles[i].classList.replace("visible","hidden");
+        }
+
+        // Remove active class from all overlay elements
+        var actives = document.getElementsByClassName("overlay");
+        for(var i=0; i < actives.length; i++){
+            actives[i].classList.remove("active");
+        }
+
+        // Remove faded class from all thumbnail images
+        var images = document.getElementsByClassName("faded");
+        for(var i=0; i < images.length; i++){
+            images[i].classList.remove("faded");
         }
               
         // Make the relevant info block visible
@@ -112,13 +122,57 @@ thumbnails.forEach(function(thumbnail,current) {
         var clickedElement = document.getElementById(clickedId);
         clickedElement.classList.replace("hidden","visible");
         
-        
-        //console.log(thumbnail,clickedId);
+        // Make the thumbnail img faded
+        var image = thumbnail.getElementsByTagName("img")[0];
+        image.classList.add("faded");
+
+        // Make the thumbnail overlay active
+        var overlay = thumbnail.getElementsByClassName("overlay")[0];
+        overlay.classList.add("active");
         
     })
 })
 
+// Move blog image with mouse
+
+const bg = document.querySelector(".blog");
+
+if (bg) {
+    bg.addEventListener("mousemove", (e) => {
+        bg.style.backgroundPositionX = e.offsetX/5 + "%";
+        bg.style.backgroundPositionY = e.offsetY/1.3 + "%";
+    });
+}
+
+//console.log(bg);
 
 
 
+// Ye Olde popup contact form
 
+var contactButton = document.getElementById("openform");
+if(contactButton){contactButton.addEventListener('click', () => {show_form();});}
+
+var closeButton = document.getElementById("closeform");
+if(closeButton){closeButton.addEventListener('click', () => {hide_form();});}
+
+function validate_form () {
+    if(document.getElementById("name").value =="" ||
+       document.getElementById("email").value == "" ||
+       document.getElementById("message").value == "") {
+            alert("Please enter all fields!");
+    }else{
+        document.getElementById("form").onsubmit();
+        alert("Form submitted successfully");
+    }
+}
+
+function show_form (){
+    document.getElementById("formstyle").style.display = "block";
+    //console.log("contact clicked");
+}
+
+function hide_form() {
+    document.getElementById("formstyle").style.display = "none";
+    //console.log("hide clicked");
+}
