@@ -113,7 +113,7 @@ p a {
 }
 
 .blog {
-    background-image: url("/img/desk.jpg");
+    background-image: url("../img/desk.jpg");
     background-size: 200%;
     background-repeat: no-repeat;
     background-position: 50% 25%;

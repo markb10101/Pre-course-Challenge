@@ -14,18 +14,18 @@ const tickTock = () => {
     const date = currentTime.toDateString();
 
     // Get current hours,minutes,seconds
-    const h = currentTime.getHours()
-    const m = currentTime.getMinutes();
-    const s = currentTime.getSeconds();
+    const hours = currentTime.getHours()
+    const minutes = currentTime.getMinutes();
+    const seconds = currentTime.getSeconds();
 
     // Build time string including leading zeroes
     var writeTime = `${date} - `;
-    if (h<10) {writeTime += "0";}
-        writeTime += h + ":";
-    if (m<10) {writeTime += "0";}
-        writeTime += m + ":";
-    if (s<10) {writeTime += "0";}
-        writeTime += s;
+    if (hours<10) {writeTime += "0";}
+        writeTime += hours + ":";
+    if (minutes<10) {writeTime += "0";}
+        writeTime += minutes + ":";
+    if (seconds<10) {writeTime += "0";}
+        writeTime += seconds;
 
     // Inject time string into .clock element
     clock.innerHTML = writeTime;
@@ -52,7 +52,6 @@ var factsList = [
     "Mark spent a summer working as a Bingo Caller on Worthing's sea front.",
     "Mark once danced with Vic Reeves & Bob Mortimer at Manchester's infamous Ha&#xe7ienda nightclub.",
     "Mark follows a strict vegan diet, but will not eat cucumbers.",
-    "Mark assisted when barely-famous writer Will Self had a blocked toilet.",
     "Mark is very colourblind and relies on checking RGB values whenever possible.",
     "Mark's favourite coffee is an 'Oatmilk Flat White with an Extra Shot of Espresso'.",
     "Mark once crossed a busy road to avoid acknowledging members of 70's pop combo 'Genesis'.",
@@ -151,10 +150,18 @@ if (bg) {
 // Ye Olde popup contact form
 
 var contactButton = document.getElementById("openform");
-if(contactButton){contactButton.addEventListener('click', () => {show_form();});}
+if(contactButton){
+    contactButton.addEventListener('click', () => {
+        show_form();
+    });
+}
 
 var closeButton = document.getElementById("closeform");
-if(closeButton){closeButton.addEventListener('click', () => {hide_form();});}
+if(closeButton){
+    closeButton.addEventListener('click', () => {
+        hide_form();
+    });
+}
 
 function validate_form () {
     if(document.getElementById("name").value =="" ||
